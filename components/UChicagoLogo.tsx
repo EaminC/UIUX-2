@@ -5,7 +5,7 @@ interface UChicagoLogoProps {
   variant?: 'full' | 'shield' | 'text' | 'image';
 }
 
-export function UChicagoLogo({ className = '', variant = 'image' }: UChicagoLogoProps) {
+export function UChicagoLogo({ className = '', variant = 'shield' }: UChicagoLogoProps) {
   const [imageError, setImageError] = useState(false);
 
   // If variant is 'image' and image hasn't failed, show the real logo
@@ -21,7 +21,7 @@ export function UChicagoLogo({ className = '', variant = 'image' }: UChicagoLogo
     );
   }
 
-  if (variant === 'shield' || (variant === 'image' && imageError)) {
+  if (variant === 'shield' || variant === 'image' || imageError) {
     return (
       <svg
         viewBox="0 0 100 120"
