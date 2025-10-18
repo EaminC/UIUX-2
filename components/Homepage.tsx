@@ -212,7 +212,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
                     ))}
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-maroon/5 to-maroon/10 rounded-xl p-8">
+                  <div className="bg-gradient-to-br from-card to-secondary rounded-xl p-8 border border-border">
                   <h3 className="mb-6 text-maroon">Career Growth Outlook</h3>
                   <div className="space-y-6">
                     {[
@@ -220,7 +220,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
                       { role: 'Software Engineer', growth: '+25% by 2030', salary: '$110k-150k' },
                       { role: 'Data Scientist', growth: '+36% by 2030', salary: '$120k-160k' }
                     ].map((career, index) => (
-                      <div key={index} className="bg-white rounded-lg p-4 border border-maroon/10">
+                      <div key={index} className="bg-secondary rounded-lg p-4 border border-border">
                         <div className="font-medium text-foreground mb-2">{career.role}</div>
                         <div className="flex items-center justify-between text-sm">
                           <span className="text-muted-foreground">{career.growth}</span>

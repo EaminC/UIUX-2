@@ -291,7 +291,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-maroon/5 via-maroon/10 to-maroon/5 rounded-2xl p-12 text-center shadow-xl border border-maroon/10">
+              <div className="bg-gradient-to-br from-secondary via-card to-secondary rounded-2xl p-12 text-center shadow-xl border border-border">
                 <h3 className="mb-4">Download Complete Course Catalog</h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Get detailed descriptions, prerequisites, and schedules for all available courses.
@@ -324,7 +324,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
                   ))}
                 </div>
 
-                <Card className="border-maroon/20 bg-gradient-to-br from-gray-50 to-white">
+                <Card className="border-border bg-gradient-to-br from-secondary to-card">
                   <CardContent className="p-8">
                     <div className="grid lg:grid-cols-2 gap-8">
                       <div>
@@ -359,7 +359,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
                             { metric: 'Learning Outcomes', rating: '4.5/5.0' },
                             { metric: 'Career Preparation', rating: '4.8/5.0' }
                           ].map((item, idx) => (
-                            <div key={idx} className="flex items-center justify-between p-3 bg-white rounded-lg border border-maroon/10">
+                            <div key={idx} className="flex items-center justify-between p-3 bg-secondary rounded-lg border border-border">
                               <span className="font-medium">{item.metric}</span>
                               <span className="text-maroon font-bold">{item.rating}</span>
                             </div>
@@ -469,7 +469,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
               </div>
 
               <div className="grid lg:grid-cols-2 gap-8">
-                <Card className="border-maroon/20 bg-gradient-to-br from-maroon/5 to-maroon/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group">
+                <Card className="border-border bg-gradient-to-br from-secondary to-card hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group">
                   <CardContent className="p-8 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-maroon/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <Calendar size={40} className="text-maroon mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />
@@ -483,7 +483,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
                   </CardContent>
                 </Card>
 
-                <Card className="border-maroon/20 bg-gradient-to-br from-maroon/5 to-maroon/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group">
+                <Card className="border-border bg-gradient-to-br from-secondary to-card hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group">
                   <CardContent className="p-8 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-maroon/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <Sparkles size={40} className="text-maroon mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />
