@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
-import { UChicagoLogo } from "./UChicagoLogo";
 
 interface HeaderProps {
   onNavigate: (page: "home" | "program") => void;
@@ -13,7 +12,7 @@ export function Header({ onNavigate }: HeaderProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -24,32 +23,32 @@ export function Header({ onNavigate }: HeaderProps) {
     { name: "Admissions", action: () => {} },
     { name: "Student Life", action: () => {} },
     { name: "Faculty", action: () => {} },
-    { name: "Contact", action: () => {} },
   ];
 
   return (
     <header
-      className={`bg-card/95 backdrop-blur-md border-b border-border sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? "shadow-lg" : "shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/80 backdrop-blur-xl shadow-sm"
+          : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <button
             onClick={() => onNavigate("home")}
-            className="flex items-center gap-4 hover:opacity-80 transition-all duration-300 group"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity group"
           >
-            <UChicagoLogo
-              variant="shield"
-              className="h-12 w-12 transform group-hover:scale-105 transition-transform"
-            />
-            <div className="text-left hidden md:block">
-              <div className="font-bold text-maroon tracking-tight">
-                University of Chicago
+            <div className="w-10 h-10 bg-maroon rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">
+              UC
+            </div>
+            <div className="hidden md:flex flex-col items-start">
+              <div className="text-sm font-bold text-maroon leading-tight">
+                UNIVERSITY OF CHICAGO
               </div>
-              <div className="text-sm text-muted-foreground">
-                Masters in Computer Science
+              <div className="text-xs text-muted-foreground leading-tight">
+                Computer Science
               </div>
             </div>
           </button>
@@ -60,23 +59,20 @@ export function Header({ onNavigate }: HeaderProps) {
               <button
                 key={item.name}
                 onClick={item.action}
-                className="text-foreground hover:text-maroon transition-all duration-300 font-medium relative group"
+                className="text-sm font-medium text-foreground hover:text-maroon transition-colors relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-maroon group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-maroon group-hover:w-full transition-all duration-300" />
               </button>
             ))}
           </nav>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button
-              variant="outline"
-              className="border-maroon/30 text-maroon hover:bg-maroon hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-300"
-            >
+            <Button variant="ghost" size="sm">
               Student Portal
             </Button>
-            <Button className="bg-maroon hover:bg-maroon-dark text-white shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <Button size="sm" className="bg-maroon hover:bg-maroon-dark">
               Apply Now
             </Button>
           </div>
@@ -84,7 +80,7 @@ export function Header({ onNavigate }: HeaderProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-maroon transition-colors"
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -92,7 +88,7 @@ export function Header({ onNavigate }: HeaderProps) {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-6 border-t border-gray-200">
+          <div className="lg:hidden py-6 border-t">
             <nav className="flex flex-col gap-4 mb-6">
               {navigation.map((item) => (
                 <button
@@ -108,13 +104,10 @@ export function Header({ onNavigate }: HeaderProps) {
               ))}
             </nav>
             <div className="flex flex-col gap-3">
-              <Button
-                variant="outline"
-                className="w-full border-maroon/30 text-maroon hover:bg-maroon hover:text-white"
-              >
+              <Button variant="outline" className="w-full">
                 Student Portal
               </Button>
-              <Button className="w-full bg-maroon hover:bg-maroon-dark text-white">
+              <Button className="w-full bg-maroon hover:bg-maroon-dark">
                 Apply Now
               </Button>
             </div>

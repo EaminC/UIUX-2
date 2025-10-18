@@ -1,82 +1,68 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
-import { UChicagoLogo } from './UChicagoLogo';
+import React from "react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 interface FooterProps {
-  onNavigate: (page: 'home' | 'program') => void;
+  onNavigate: (page: "home" | "program") => void;
 }
 
 export function Footer({ onNavigate }: FooterProps) {
-  const footerLinks = {
-    'Prospective Students': [
-      { label: 'Why MPCS?', action: () => onNavigate('home') },
-      { label: 'Program Options', action: () => onNavigate('program') },
-      { label: 'Admissions Process', action: () => {} },
-      { label: 'Tuition & Aid', action: () => {} },
-      { label: 'Visit Campus', action: () => {} }
+  const links = {
+    Programs: [
+      "Full-Time MS",
+      "Part-Time MS",
+      "Pre-Program",
+      "Course Catalog",
     ],
-    'Current Students': [
-      { label: 'Student Portal', action: () => {} },
-      { label: 'Course Catalog', action: () => {} },
-      { label: 'Academic Calendar', action: () => {} },
-      { label: 'Career Services', action: () => {} },
-      { label: 'Campus Resources', action: () => {} }
+    Admissions: [
+      "Apply Now",
+      "Requirements",
+      "Tuition & Aid",
+      "Visit Campus",
     ],
-    'About': [
-      { label: 'Faculty & Staff', action: () => {} },
-      { label: 'Alumni Network', action: () => {} },
-      { label: 'News & Events', action: () => {} },
-      { label: 'Research', action: () => {} },
-      { label: 'Contact Us', action: () => {} }
-    ]
+    Students: [
+      "Student Portal",
+      "Career Services",
+      "Academic Calendar",
+      "Campus Resources",
+    ],
+    About: [
+      "Faculty",
+      "Alumni Network",
+      "Contact Us",
+      "News & Events",
+    ],
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-gray-900 text-gray-300">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          {/* Logo and Contact */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-4 mb-6">
-              <UChicagoLogo variant="shield" className="h-14 w-14 text-white" />
-              <div>
-                <div className="font-bold">University of Chicago</div>
-                <div className="text-sm text-gray-400">MPCS</div>
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-maroon rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                UC
+              </div>
+              <div className="text-white font-bold text-sm">
+                UNIVERSITY OF
+                <br />
+                CHICAGO
               </div>
             </div>
-            
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Empowering the next generation of computer scientists and technology leaders through rigorous education and innovative research.
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Master's Program in Computer Science
             </p>
-
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm text-gray-400">
-                <MapPin size={16} className="flex-shrink-0" />
-                <span>5730 S Ellis Ave, Chicago, IL 60637</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-400">
-                <Phone size={16} className="flex-shrink-0" />
-                <span>(773) 702-1234</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-400">
-                <Mail size={16} className="flex-shrink-0" />
-                <span>admissions@cs.uchicago.edu</span>
-              </div>
-            </div>
           </div>
 
-          {/* Footer Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="font-bold mb-4">{category}</h4>
+          {/* Links */}
+          {Object.entries(links).map(([title, items]) => (
+            <div key={title}>
+              <h4 className="text-white font-semibold mb-4">{title}</h4>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <button
-                      onClick={link.action}
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
-                    >
-                      {link.label}
+                {items.map((item) => (
+                  <li key={item}>
+                    <button className="text-sm hover:text-white transition-colors">
+                      {item}
                     </button>
                   </li>
                 ))}
@@ -85,36 +71,49 @@ export function Footer({ onNavigate }: FooterProps) {
           ))}
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-sm text-gray-400">
-              © {new Date().getFullYear()} University of Chicago. All rights reserved.
+        {/* Contact */}
+        <div className="border-t border-gray-800 pt-8 pb-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-maroon flex-shrink-0 mt-0.5" />
+              <div>
+                <div className="text-sm font-medium text-white mb-1">Address</div>
+                <div className="text-sm">
+                  5730 S Ellis Ave
+                  <br />
+                  Chicago, IL 60637
+                </div>
+              </div>
             </div>
-
-            <div className="flex items-center gap-6">
-              {[
-                { icon: <Facebook size={20} />, label: 'Facebook' },
-                { icon: <Twitter size={20} />, label: 'Twitter' },
-                { icon: <Linkedin size={20} />, label: 'LinkedIn' },
-                { icon: <Instagram size={20} />, label: 'Instagram' }
-              ].map((social) => (
-                <button
-                  key={social.label}
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label={social.label}
-                >
-                  {social.icon}
-                </button>
-              ))}
+            <div className="flex items-start gap-3">
+              <Phone className="w-5 h-5 text-maroon flex-shrink-0 mt-0.5" />
+              <div>
+                <div className="text-sm font-medium text-white mb-1">Phone</div>
+                <div className="text-sm">(773) 702-1234</div>
+              </div>
             </div>
+            <div className="flex items-start gap-3">
+              <Mail className="w-5 h-5 text-maroon flex-shrink-0 mt-0.5" />
+              <div>
+                <div className="text-sm font-medium text-white mb-1">Email</div>
+                <div className="text-sm">admissions@cs.uchicago.edu</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <div className="flex items-center gap-6 text-sm">
-              <button className="text-gray-400 hover:text-white transition-colors">
+        {/* Copyright */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-400">
+              © 2024 The University of Chicago. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <button className="hover:text-white transition-colors">
                 Privacy Policy
               </button>
-              <button className="text-gray-400 hover:text-white transition-colors">
-                Accessibility
+              <button className="hover:text-white transition-colors">
+                Terms of Use
               </button>
             </div>
           </div>
