@@ -180,14 +180,14 @@ export function Homepage({ onNavigate }: HomepageProps) {
       </section>
 
       {/* Modern Stats Cards */}
-      <section className="pb-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+      <section className="pb-20 bg-gradient-to-br from-background via-background/95 to-background">
         <ModernStatsSection />
       </section>
 
       {/* AI & Job Market Section - Addresses Percy's concerns */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+      <section className="py-20 bg-gradient-to-br from-background via-background/95 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-maroon/20 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-white">
+          <Card className="border-maroon/20 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-card">
             <CardContent className="p-8 lg:p-12 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-96 h-96 bg-maroon/5 rounded-full blur-3xl -z-0"></div>
               <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -237,7 +237,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
       </section>
 
       {/* Program Pathways */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-maroon text-white mb-4">Flexible Paths to Your Degree</Badge>
@@ -251,7 +251,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
             {pathways.map((pathway, index) => (
               <Card 
                 key={index} 
-                className="border-maroon/20 hover:border-maroon/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-white group"
+                className="border-maroon/20 hover:border-maroon/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-card group"
               >
                 <CardContent className="p-8 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-maroon/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -285,7 +285,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-background/90 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="mb-4">Why Choose UChicago MPCS?</h2>
@@ -353,7 +353,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
       </section>
 
       {/* FAQ Section - Helps Alaina reduce email volume */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="mb-4">Frequently Asked Questions</h2>

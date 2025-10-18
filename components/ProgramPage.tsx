@@ -198,10 +198,10 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
       </section>
 
       {/* Main Content Tabs */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="curriculum" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 mb-12 bg-gray-100 p-1.5 h-auto rounded-xl shadow-md">
+            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 mb-12 bg-secondary p-1.5 h-auto rounded-xl shadow-md">
               <TabsTrigger value="curriculum" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-maroon data-[state=active]:to-maroon-dark data-[state=active]:text-white data-[state=active]:shadow-lg py-3 rounded-lg transition-all duration-300">
                 <BookOpen size={18} className="mr-2" />
                 Curriculum
@@ -268,7 +268,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
                 
                 <div className="grid lg:grid-cols-2 gap-8">
                   {specializations.map((spec, index) => (
-                    <Card key={index} className="border-maroon/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group bg-white">
+                    <Card key={index} className="border-maroon/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group bg-card">
                       <CardContent className="p-8 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-maroon/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="w-16 h-16 bg-gradient-to-br from-maroon/10 to-maroon/5 rounded-2xl flex items-center justify-center mb-6 text-maroon shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10">
@@ -313,7 +313,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
 
                 <div className="grid lg:grid-cols-3 gap-8 mb-12">
                   {instructorTypes.map((type, index) => (
-                    <Card key={index} className="border-maroon/20 text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-white">
+                    <Card key={index} className="border-maroon/20 text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-card">
                       <CardContent className="p-8 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-maroon/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="text-5xl font-bold text-maroon mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">{type.percentage}</div>
@@ -382,7 +382,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
 
                 <div className="space-y-8">
                   {studentJourneys.map((student, index) => (
-                    <Card key={index} className="border-maroon/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 group bg-white">
+                    <Card key={index} className="border-maroon/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 group bg-card">
                       <CardContent className="p-8 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-maroon/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="grid lg:grid-cols-4 gap-6">
@@ -447,7 +447,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
 
                 <div className="grid lg:grid-cols-2 gap-8">
                   {resources.map((resource, index) => (
-                    <Card key={index} className="border-maroon/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-white">
+                    <Card key={index} className="border-maroon/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-card">
                       <CardContent className="p-8 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-maroon/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="w-14 h-14 bg-gradient-to-br from-maroon/10 to-maroon/5 rounded-2xl flex items-center justify-center mb-6 text-maroon shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10">
@@ -503,7 +503,7 @@ export function ProgramPage({ onNavigate }: ProgramPageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-background/90 to-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-6">Ready to Start Your Journey?</h2>
           <p className="text-xl text-muted-foreground mb-8">
