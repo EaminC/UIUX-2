@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface UChicagoLogoProps {
   className?: string;
-  variant?: 'full' | 'shield' | 'text';
+  variant?: 'full' | 'shield' | 'text' | 'image';
 }
 
-export function UChicagoLogo({ className = '', variant = 'full' }: UChicagoLogoProps) {
-  if (variant === 'shield') {
+export function UChicagoLogo({ className = '', variant = 'image' }: UChicagoLogoProps) {
+  const [imageError, setImageError] = useState(false);
+
+  // If variant is 'image' and image hasn't failed, show the real logo
+  if (variant === 'image' && !imageError) {
+    return (
+      <img
+        src="/uchicago-logo.png"
+        alt="University of Chicago Logo"
+        className={className}
+        onError={() => setImageError(true)}
+        style={{ objectFit: 'contain' }}
+      />
+    );
+  }
+
+  if (variant === 'shield' || (variant === 'image' && imageError)) {
     return (
       <svg
         viewBox="0 0 100 120"

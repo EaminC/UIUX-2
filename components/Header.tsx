@@ -40,7 +40,7 @@ export function Header({ onNavigate }: HeaderProps) {
             onClick={() => onNavigate('home')}
             className="flex items-center gap-4 hover:opacity-80 transition-all duration-300 group"
           >
-            <UChicagoLogo variant="shield" className="h-12 w-12 text-maroon transform group-hover:scale-105 transition-transform" />
+            <UChicagoLogo variant="image" className="h-12 w-auto text-maroon transform group-hover:scale-105 transition-transform" />
             <div className="text-left hidden md:block">
               <div className="font-bold text-maroon tracking-tight">University of Chicago</div>
               <div className="text-sm text-muted-foreground">Masters in Computer Science</div>
