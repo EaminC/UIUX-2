@@ -34,24 +34,25 @@ export function Homepage({ onNavigate }: HomepageProps) {
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white pt-20 pb-32">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8000000a_1px,transparent_1px),linear-gradient(to_bottom,#8000000a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
         <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-maroon/5 rounded-full blur-[120px]" />
-        
+
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
             <Badge className="mb-6 bg-maroon/10 text-maroon hover:bg-maroon/20 border-0">
               <Star className="w-3 h-3 mr-1" />
               Top 10 CS Program Nationally
             </Badge>
-            
+
             <h1 className="mb-6 text-balance">
               Master Computer Science at{" "}
               <span className="text-maroon">UChicago</span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-              Transform your career with a world-class education in computer science.
-              Join a community of innovators, thinkers, and builders shaping the future of technology.
+              Transform your career with a world-class education in computer
+              science. Join a community of innovators, thinkers, and builders
+              shaping the future of technology.
             </p>
-            
+
             <div className="flex flex-wrap gap-4 mb-12">
               <Button
                 size="lg"
@@ -69,7 +70,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
                 Request Information
               </Button>
             </div>
-            
+
             {/* 关键数据 */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
@@ -79,8 +80,12 @@ export function Homepage({ onNavigate }: HomepageProps) {
                 { value: "12mo", label: "Full-Time" },
               ].map((stat, i) => (
                 <div key={i} className="text-center md:text-left">
-                  <div className="text-3xl font-bold text-maroon mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-3xl font-bold text-maroon mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -102,10 +107,11 @@ export function Homepage({ onNavigate }: HomepageProps) {
                 Not Replaces Them
               </h2>
               <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                The AI revolution is creating unprecedented demand for skilled computer scientists.
-                Our program prepares you to lead AI development, not be replaced by it.
+                The AI revolution is creating unprecedented demand for skilled
+                computer scientists. Our program prepares you to lead AI
+                development, not be replaced by it.
               </p>
-              
+
               <div className="space-y-4">
                 {[
                   "Build and manage AI systems from the ground up",
@@ -120,14 +126,29 @@ export function Homepage({ onNavigate }: HomepageProps) {
                 ))}
               </div>
             </div>
-            
+
             <div className="space-y-4">
               {[
-                { role: "AI/ML Engineer", growth: "+35%", salary: "$150k-190k" },
-                { role: "Software Engineer", growth: "+25%", salary: "$120k-160k" },
-                { role: "Data Scientist", growth: "+36%", salary: "$130k-170k" },
+                {
+                  role: "AI/ML Engineer",
+                  growth: "+35%",
+                  salary: "$150k-190k",
+                },
+                {
+                  role: "Software Engineer",
+                  growth: "+25%",
+                  salary: "$120k-160k",
+                },
+                {
+                  role: "Data Scientist",
+                  growth: "+36%",
+                  salary: "$130k-170k",
+                },
               ].map((job, i) => (
-                <Card key={i} className="p-6 bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all">
+                <Card
+                  key={i}
+                  className="p-6 bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all"
+                >
                   <div className="flex justify-between items-start mb-3">
                     <h4 className="text-white font-semibold">{job.role}</h4>
                     <Badge className="bg-green-500/20 text-green-300 border-0">
@@ -135,7 +156,9 @@ export function Homepage({ onNavigate }: HomepageProps) {
                     </Badge>
                   </div>
                   <p className="text-2xl font-bold text-white">{job.salary}</p>
-                  <p className="text-sm text-white/70 mt-1">Projected by 2030</p>
+                  <p className="text-sm text-white/70 mt-1">
+                    Projected by 2030
+                  </p>
                 </Card>
               ))}
             </div>
@@ -152,8 +175,8 @@ export function Homepage({ onNavigate }: HomepageProps) {
             </Badge>
             <h2 className="mb-4">Choose Your Path</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Whether you're changing careers or advancing your current role,
-              we have a program designed for your goals.
+              Whether you're changing careers or advancing your current role, we
+              have a program designed for your goals.
             </p>
           </div>
 
@@ -164,21 +187,33 @@ export function Homepage({ onNavigate }: HomepageProps) {
                 title: "Full-Time Program",
                 duration: "9-12 Months",
                 desc: "Intensive, immersive experience for career changers",
-                features: ["Complete in 3-4 quarters", "Dedicated career support", "On-campus experience"],
+                features: [
+                  "Complete in 3-4 quarters",
+                  "Dedicated career support",
+                  "On-campus experience",
+                ],
               },
               {
                 icon: <Briefcase className="w-8 h-8" />,
                 title: "Part-Time Program",
                 duration: "18-24 Months",
                 desc: "Evening courses for working professionals",
-                features: ["Evening classes", "Work while studying", "Same degree"],
+                features: [
+                  "Evening classes",
+                  "Work while studying",
+                  "Same degree",
+                ],
               },
               {
                 icon: <BookOpen className="w-8 h-8" />,
                 title: "Pre-Program Track",
                 duration: "1 Summer",
                 desc: "Foundation courses for non-CS backgrounds",
-                features: ["No CS required", "Summer intensive", "Smooth transition"],
+                features: [
+                  "No CS required",
+                  "Summer intensive",
+                  "Smooth transition",
+                ],
               },
             ].map((path, i) => (
               <Card
@@ -189,7 +224,9 @@ export function Homepage({ onNavigate }: HomepageProps) {
                   {path.icon}
                 </div>
                 <h3 className="mb-2">{path.title}</h3>
-                <div className="text-maroon font-semibold mb-4">{path.duration}</div>
+                <div className="text-maroon font-semibold mb-4">
+                  {path.duration}
+                </div>
                 <p className="text-muted-foreground mb-6">{path.desc}</p>
                 <ul className="space-y-3">
                   {path.features.map((feature, j) => (
